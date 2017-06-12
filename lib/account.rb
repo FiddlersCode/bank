@@ -1,5 +1,5 @@
 class Account
-  attr_reader :balance, :deposit_date, :withdrawal_date, :history
+  attr_reader :balance, :deposit_date, :withdrawal_date, :show_history
 
   def initialize
     @balance = 0
@@ -19,8 +19,9 @@ class Account
     @withdrawal_date = Time.new.strftime "%d/%m/%Y"
   end
 
-  def history
+  def show_history
     p 'date || credit || debit || balance'
+  
   end
 
 end

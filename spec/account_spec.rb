@@ -34,6 +34,9 @@ describe 'account' do
       expect(account.withdrawal_date).to eq(date)
     end
 
+    xit 'should show the history of one transaction' do
+      expect(account.show_history).to include(date + '|| 1000 || || 1000')
+    end
   end
 
   context 'account actions not requiring deposit' do
@@ -43,7 +46,7 @@ describe 'account' do
     end
 
     it 'account history should show headers' do
-      expect(account.history).to eq(headers)
+      expect(account.show_history).to eq(headers)
     end
   end
 
