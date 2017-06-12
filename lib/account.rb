@@ -10,7 +10,11 @@ class Account
   end
 
   def withdraw(amount)
-    @balance -= amount
+    if amount <= @balance
+      @balance -= amount
+    else
+      p "You cannot withdraw more than your balance."
+    end
   end
 
 end

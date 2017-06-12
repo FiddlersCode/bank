@@ -16,4 +16,9 @@ describe 'account' do
     account.withdraw(500)
     expect(account.balance).to equal(500)
   end
+
+  it 'should not go into negative balance' do
+    account.withdraw(500)
+    expect(account.balance).to equal(0)
+  end
 end
