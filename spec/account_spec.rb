@@ -2,10 +2,10 @@ require 'account'
 
 describe 'account' do
   let(:account) { Account.new }
-  let(:date) { Time.now.strftime "%d/%m/%Y" }
+  let(:date) { Time.new.strftime "%d/%m/%Y" }
   let(:headers) { 'date || credit || debit || balance'}
-  let(:deposit) { [date, "1000.00", "", "1000.00"] }
-  let(:withdrawal) { [date, "", "500.00", "500.00" ]}
+  let(:deposit) { [date, 1000, 1000] }
+  let(:withdrawal) { [date, -500, 500 ]}
 
   context 'initialize' do
     it 'should start with a balance of zero' do
@@ -15,7 +15,7 @@ describe 'account' do
 
   context 'account actions requiring deposit' do
     before(:each) do
-      account.deposit(1000)
+      account.transact(1000)
     end
 
     it 'should accept a deposit' do
@@ -23,40 +23,30 @@ describe 'account' do
     end
 
     it 'should show the date of the deposit' do
-      expect(account.deposit_date).to include(date)
+      expect(account.transaction_date).to include(date)
     end
 
     it 'should add the deposit to the transactions array' do
       expect(account.transactions).to include(deposit)
     end
+  end
+
+  context 'account actions requiring deposit and withdrawal' do
+    before(:each) do
+      account.transact(1000)
+      account.transact(-500)
+    end
 
     it 'should issue a withdrawal' do
-      account.withdraw(500)
       expect(account.balance).to equal(500)
     end
 
     it 'should show the date of the withdrawal' do
-      account.withdraw(500)
-      expect(account.withdrawal_date).to eq(date)
+      expect(account.transaction_date).to eq(date)
     end
 
     it 'should add the withdrawal to the transactions array' do
-      account.withdraw(500)
       expect(account.transactions).to include(withdrawal)
     end
-
-    xit 'should show 2 decimal points when printed' do
-      account.withdraw(200)
-      expect(account.print_history).to include("12/06/2017 || 1000.00 || || 1000.00 ||")
-    end
-
   end
-
-  context 'account actions not requiring deposit' do
-    it 'should not go into negative balance' do
-      account.withdraw(500)
-      expect(account.balance).to equal(0)
-    end
-  end
-
 end
