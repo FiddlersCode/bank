@@ -45,8 +45,8 @@ describe 'account' do
       expect(account.transactions).to include(withdrawal)
     end
 
-    xit 'should show the history of one transaction' do
-      expect(account.show_history).to include(date + '|| 1000 || || 1000')
+    it 'should show 2 decimal points when printed' do
+      expect(account.show_history).to include('1000.00')
     end
 
   end

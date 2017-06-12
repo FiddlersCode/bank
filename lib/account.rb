@@ -33,16 +33,16 @@ class Account
   def create_deposit
     transaction = []
     transaction << @deposit_date
-    transaction << @amount
-    transaction << @balance
+    transaction << '%.2f' % @amount
+    transaction << '%.2f' % @balance
     @transactions << transaction
   end
 
   def create_withdrawal
     transaction = []
     transaction << @withdrawal_date
-    transaction << @amount
-    transaction << @balance
+    transaction << '%.2f' % @amount
+    transaction << '%.2f' % @balance
     @transactions << transaction
   end
 
