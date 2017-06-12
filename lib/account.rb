@@ -25,15 +25,17 @@ class Account
     create_withdrawal
   end
 
-  def show_history
+
+  private
+  def show_headers
     p 'date || credit || debit || balance'
   end
 
-  private
   def create_deposit
     transaction = []
     transaction << @deposit_date
     transaction << '%.2f' % @amount
+    transaction << ""
     transaction << '%.2f' % @balance
     @transactions << transaction
   end
@@ -41,6 +43,7 @@ class Account
   def create_withdrawal
     transaction = []
     transaction << @withdrawal_date
+    transaction << ""
     transaction << '%.2f' % @amount
     transaction << '%.2f' % @balance
     @transactions << transaction

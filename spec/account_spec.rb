@@ -4,8 +4,8 @@ describe 'account' do
   let(:account) { Account.new }
   let(:date) { Time.now.strftime "%d/%m/%Y" }
   let(:headers) { 'date || credit || debit || balance'}
-  let(:deposit) { [date, "1000.00", "1000.00"] }
-  let(:withdrawal) { [date, "500.00", "500.00" ]}
+  let(:deposit) { [date, "1000.00", "", "1000.00"] }
+  let(:withdrawal) { [date, "", "500.00", "500.00" ]}
 
   context 'initialize' do
     it 'should start with a balance of zero' do
