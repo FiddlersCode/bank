@@ -23,7 +23,7 @@ class Account
 
   def record_transaction
     transaction = []
-    transaction.push(@transaction_date, @amount, @balance)
+    transaction.push(@transaction_date, "%.2f" % @amount, "%.2f" % @balance)
     @transactions << transaction
   end
 end

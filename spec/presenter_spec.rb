@@ -12,8 +12,8 @@ describe 'presenter' do
     before(:each) do
       account.transact(1000)
     end
-    it 'should show 2 decimal points when printed' do
-      expect(account.print_history).to include("1000.00")
+    it 'should show headers when printed' do
+      expect(account.print_history).to include('date || credit || debit || balance')
     end
   end
 end

@@ -6,9 +6,8 @@ class Presenter
     @print_array = []
   end
 
-
   def format_history
-    "1000.00"
+    show_headers
   end
 
   private
