@@ -22,6 +22,7 @@ rspec
 
 ---
 ## Processes
+* Diagramming
 * TDD
 
 ## Specification
@@ -52,3 +53,4 @@ date || credit || debit || balance
 ## Technologies used
 
 * [Ruby 2.4.0](https://www.ruby-lang.org/en/)
+* [RSpec](http://rspec.info/)
