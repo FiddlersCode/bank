@@ -1,5 +1,5 @@
 class Account
-  attr_reader :balance
+  attr_reader :balance, :withdrawal_date
 
   def initialize
     @balance = 0
@@ -7,6 +7,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    @withdrawal_date = Time.now.strftime "%d/%m/%Y"
   end
 
   def withdraw(amount)
