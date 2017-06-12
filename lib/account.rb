@@ -1,8 +1,9 @@
 class Account
   attr_reader :balance, :deposit_date, :withdrawal_date, :show_history
+  INITIAL_BALANCE = 0
 
   def initialize
-    @balance = 0
+    @balance = INITIAL_BALANCE
   end
 
   def deposit(amount)
@@ -21,7 +22,7 @@ class Account
 
   def show_history
     p 'date || credit || debit || balance'
-  
+
   end
 
 end
