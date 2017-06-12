@@ -20,7 +20,7 @@ describe 'account' do
     end
 
     it 'should show the date of the deposit' do
-      'expect(account.withdrawal_date).to equal(date)'
+      expect(account.deposit_date).to eq(date)
     end
 
     it 'should issue a withdrawal' do
@@ -28,8 +28,9 @@ describe 'account' do
       expect(account.balance).to equal(500)
     end
 
-    xit 'should show the date of the withdrawal' do
+    it 'should show the date of the withdrawal' do
       account.withdraw(500)
+
     end
   end
 
