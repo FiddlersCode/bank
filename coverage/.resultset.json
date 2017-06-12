@@ -5,11 +5,17 @@
         1,
         null,
         1,
-        3,
+        4,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -19,6 +25,10 @@
       "/Users/Owner/Documents/Projects/bank/lib/account.rb": [
         1,
         1,
+        null,
+        1,
+        3,
+        null,
         null,
         1,
         2,
@@ -31,6 +41,6 @@
         null
       ]
     },
-    "timestamp": 1497263401
+    "timestamp": 1497263565
   }
 }
