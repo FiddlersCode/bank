@@ -27,12 +27,12 @@ class Account
 
   def show_history
     p 'date || credit || debit || balance'
-
   end
 
   private
   def create_deposit
     transaction = []
+    transaction << "credit"
     transaction << @deposit_date
     transaction << @amount
     transaction << @balance
@@ -41,6 +41,7 @@ class Account
 
   def create_withdrawal
     transaction = []
+    transaction << "debit"
     transaction << @withdrawal_date
     transaction << @amount
     transaction << @balance
