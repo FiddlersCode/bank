@@ -46,7 +46,8 @@ describe 'account' do
     end
 
     xit 'should show 2 decimal points when printed' do
-      expect(account.show_history).to include('1000.00')
+      account.withdraw(200)
+      expect(account.print_history).to include("12/06/2017 || 1000.00 || || 1000.00 ||")
     end
 
   end

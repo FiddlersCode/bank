@@ -5,6 +5,7 @@ class Account
   def initialize
     @balance = INITIAL_BALANCE
     @transactions = []
+    @print_array = []
   end
 
   def deposit(amount)
@@ -25,8 +26,14 @@ class Account
     create_withdrawal
   end
 
+  def print_history
+    show_headers
+    format_transactions
+    puts @print_array.join("\n")
+  end
 
   private
+
   def show_headers
     p 'date || credit || debit || balance'
   end
@@ -49,8 +56,11 @@ class Account
     @transactions << transaction
   end
 
-  def add_to_history
-
+  def format_transactions
+    @transactions.each do | transaction |
+      @string = transaction.join(" || ")
+      @print_array << @string
+    end
   end
 
 end
