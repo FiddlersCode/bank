@@ -69,6 +69,9 @@ As a client
 So I can track my spending/saving
 I would like to be able to see my account history
 
+## Diagram
+![diagram](https://www.draw.io/#G0B1tialTcWTRJS3k4UDJUNGNFQmc)
+
 ## Technologies used
 
 * [Ruby 2.4.0](https://www.ruby-lang.org/en/)
