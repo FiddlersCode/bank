@@ -30,7 +30,7 @@ describe 'account' do
 
     it 'should show the date of the withdrawal' do
       account.withdraw(500)
-
+      expect(account.withdrawal_date).to eq(date)
     end
   end
 

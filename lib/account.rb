@@ -1,5 +1,5 @@
 class Account
-  attr_reader :balance, :deposit_date
+  attr_reader :balance, :deposit_date, :withdrawal_date
 
   def initialize
     @balance = 0
@@ -16,6 +16,7 @@ class Account
     else
       p "You cannot withdraw more than your balance."
     end
+    @withdrawal_date = Time.new.strftime "%d/%m/%Y"
   end
 
 end
