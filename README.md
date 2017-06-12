@@ -22,6 +22,7 @@ rspec
 
 ---
 ## Processes
+* User stories
 * Diagramming
 * TDD
 
@@ -37,9 +38,13 @@ rspec
 ### Acceptance criteria
 
 **Given** a client makes a deposit of 1000 on 10-01-2012
+
 **And** a deposit of 2000 on 13-01-2012
+
 **And** a withdrawal of 500 on 14-01-2012
+
 **When** she prints her bank statement
+
 **Then** she would see
 
 ```
@@ -50,6 +55,24 @@ date || credit || debit || balance
 ```
 
 ---
+
+## User stories
+As a client,
+So I can know how much money I have
+I would like to be able to see my account balance
+
+As a client,
+So I can store my money safely
+I would like to be able to make a deposit
+
+As a client,
+So I can spend my money
+I would like to be able to withdraw funds
+
+As a client
+So I can track my spending/saving
+I would like to be able to see my account history
+
 ## Technologies used
 
 * [Ruby 2.4.0](https://www.ruby-lang.org/en/)
