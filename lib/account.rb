@@ -32,7 +32,6 @@ class Account
   private
   def create_deposit
     transaction = []
-    transaction << "credit"
     transaction << @deposit_date
     transaction << @amount
     transaction << @balance
@@ -41,7 +40,6 @@ class Account
 
   def create_withdrawal
     transaction = []
-    transaction << "debit"
     transaction << @withdrawal_date
     transaction << @amount
     transaction << @balance
