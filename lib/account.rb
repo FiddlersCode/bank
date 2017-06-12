@@ -22,6 +22,7 @@ class Account
       p "You cannot withdraw more than your balance."
     end
     @withdrawal_date = Time.new.strftime "%d/%m/%Y"
+    create_withdrawal
   end
 
   def show_history
@@ -31,9 +32,19 @@ class Account
 
   private
   def create_deposit
-    @transactions << @deposit_date
-    @transactions << @amount
-    @transactions << @balance
+    transaction = []
+    transaction << @deposit_date
+    transaction << @amount
+    transaction << @balance
+    @transactions << transaction
+  end
+
+  def create_withdrawal
+    transaction = []
+    transaction << @withdrawal_date
+    transaction << @amount
+    transaction << @balance
+    @transactions << transaction
   end
 
   def add_to_history

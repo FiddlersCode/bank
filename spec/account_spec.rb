@@ -4,7 +4,8 @@ describe 'account' do
   let(:account) { Account.new }
   let(:date) { Time.now.strftime "%d/%m/%Y" }
   let(:headers) { 'date || credit || debit || balance'}
-  let(:transaction) { [date, 1000, 1000] }
+  let(:deposit) { [date, 1000, 1000] }
+  let(:withdrawal) { [date, 500, 500 ]}
 
   context 'initialize' do
     it 'should start with a balance of zero' do
@@ -25,8 +26,8 @@ describe 'account' do
       expect(account.deposit_date).to eq(date)
     end
 
-    it 'should add the deposi to the transactions array' do
-      expect(account.transactions).to eq(transaction)
+    it 'should add the deposit to the transactions array' do
+      expect(account.transactions).to include(deposit)
     end
 
     it 'should issue a withdrawal' do
@@ -37,6 +38,11 @@ describe 'account' do
     it 'should show the date of the withdrawal' do
       account.withdraw(500)
       expect(account.withdrawal_date).to eq(date)
+    end
+
+    it 'should add the withdrawal to the transactions array' do
+      account.withdraw(500)
+      expect(account.transactions).to include(withdrawal)
     end
 
     xit 'should show the history of one transaction' do
