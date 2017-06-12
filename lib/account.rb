@@ -1,4 +1,4 @@
-
+require_relative './presenter.rb'
 class Account
   attr_reader :balance, :transaction_date, :transactions
   INITIAL_BALANCE = 0
@@ -13,6 +13,10 @@ class Account
     @balance += amount
     @transaction_date = Time.new.strftime "%d/%m/%Y"
     record_transaction
+  end
+
+  def print_history(presenter = Presenter.new)
+    presenter.format_history
   end
 
   private
