@@ -12,36 +12,16 @@ class Account
     @amount = amount
     @balance += amount
     @transaction_date = Time.new.strftime "%d/%m/%Y"
-    create_transation
-  end
-
-  def print_history
-    show_headers
-    format_transactions
-    puts @print_array.join("\n")
+    record_transaction
   end
 
   private
 
-  def show_headers
-    p 'date || credit || debit || balance'
-  end
-
-  def create_transation
+  def record_transaction
     transaction = []
     transaction << @transaction_date
     transaction << @amount
     transaction << @balance
     @transactions << transaction
   end
-
-
-
-  def format_transactions
-    @transactions.each do | transaction |
-      @string = transaction.join(" || ")
-      @print_array << @string
-    end
-  end
-
 end
