@@ -70,7 +70,7 @@ So I can track my spending/saving
 I would like to be able to see my account history
 
 ## Diagram
-![diagram](https://www.draw.io/#G0B1tialTcWTRJS3k4UDJUNGNFQmc)
+<a href="http://imgur.com/MaYH0NK"><img src="http://i.imgur.com/MaYH0NK.png" title="source: imgur.com" /></a>
 
 ## Technologies used
 
