@@ -1,11 +1,11 @@
+
 class Account
-  attr_reader :balance, :transaction_date, :show_history, :transactions
+  attr_reader :balance, :transaction_date, :transactions
   INITIAL_BALANCE = 0
 
   def initialize
     @balance = INITIAL_BALANCE
     @transactions = []
-    @print_array = []
   end
 
   def transact(amount)
@@ -19,9 +19,7 @@ class Account
 
   def record_transaction
     transaction = []
-    transaction << @transaction_date
-    transaction << @amount
-    transaction << @balance
+    transaction.push(@transaction_date, @amount, @balance)
     @transactions << transaction
   end
 end

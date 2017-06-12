@@ -3,7 +3,6 @@ require 'account'
 describe 'account' do
   let(:account) { Account.new }
   let(:date) { Time.new.strftime "%d/%m/%Y" }
-  let(:headers) { 'date || credit || debit || balance'}
   let(:deposit) { [date, 1000, 1000] }
   let(:withdrawal) { [date, -500, 500 ]}
 
