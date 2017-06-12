@@ -58,10 +58,6 @@ date || credit || debit || balance
 
 ## User stories
 As a client,
-So I can know how much money I have
-I would like to be able to see my account balance
-
-As a client,
 So I can store my money safely
 I would like to be able to make a deposit
 
