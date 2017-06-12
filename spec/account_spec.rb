@@ -3,6 +3,7 @@ require 'account'
 describe 'account' do
   let(:account) { Account.new }
   let(:date) { Time.now.strftime "%d/%m/%Y" }
+  let(:headers) { 'date || credit || debit || balance'}
 
   context 'initialize' do
     it 'should start with a balance of zero' do
@@ -32,6 +33,7 @@ describe 'account' do
       account.withdraw(500)
       expect(account.withdrawal_date).to eq(date)
     end
+
   end
 
   context 'account actions not requiring deposit' do
@@ -39,5 +41,10 @@ describe 'account' do
       account.withdraw(500)
       expect(account.balance).to equal(0)
     end
+
+    it 'account history should show headers' do
+      expect(account.history).to eq(headers)
+    end
   end
+
 end
